@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+.app {
+  padding: 20px;
+  min-height: 100vh; /* Ensure it fills the viewport if content is short */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Light mode */
+}
+
+.right-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Light mode */
+}
+
+.dark-theme .left-section,
+.dark-theme .right-section {
+  background-color: rgba(40, 40, 40, 0.9); /* Dark mode */
+  border: 1px solid #444; /* Border for visibility */
+}
+
+.theme-toggle {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.theme-toggle:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.log {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit; /* Inherits from parent */
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: inherit; /* Matches theme text color */
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Existing styles remain, adding/updating these: */
+.app {
+  padding: 20px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Ensures children don’t overflow container */
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevents internal overflow */
+}
+
+.left-section {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.right-section {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-theme .left-section,
+.dark-theme .right-section {
+  background-color: rgba(40, 40, 40, 0.9);
+  border: 1px solid #444;
+}
+
+.theme-toggle {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
+}
+
+.input-container textarea {
+  width: 100%;
+  height: 150px; /* Reduced for better fit, adjustable */
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical; /* Allows vertical resizing only */
+  box-sizing: border-box; /* Ensures padding doesn’t add to width */
+  margin-bottom: 10px; /* Space before button */
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.log {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: inherit;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .left-section, .right-section {
+    flex: none;
+    width: 100%;
   }
 }

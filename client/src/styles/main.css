@@ -1,0 +1,21 @@
+.app.light {
+    background-color: white;
+    color: black;
+  }
+  
+  .app.dark {
+    background-color: black;
+    color: white;
+  }
+  
+  .app {
+    padding: 20px;
+  }
+  
+  .log {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }

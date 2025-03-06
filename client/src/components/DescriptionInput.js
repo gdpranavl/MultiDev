@@ -2,13 +2,13 @@ import React from 'react';
 
 const DescriptionInput = ({ description, onDescriptionChange, onSubmit }) => {
   return (
-    <div>
+    <div className="input-container">
+      <h2>Input</h2>
       <textarea
         value={description}
         onChange={onDescriptionChange}
-        placeholder="Describe your web page, e.g., 'Create a page with a button that shows an alert when clicked.'"
-        style={{ width: '100%', height: '200px' }}
-        />
+        placeholder="Enter your project description"
+      />
       <button onClick={onSubmit}>Generate</button>
     </div>
   );
